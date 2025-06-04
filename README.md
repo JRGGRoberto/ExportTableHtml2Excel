@@ -1,6 +1,11 @@
 # ExportTableHtml2Excel
 Exemplo de tabelas em HTML que por meio de uma função Javascript exporta a tabela selecionada para um arquivo em EXCEL
 
+> [!NOTE]
+> Biblioteca 
+> https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js
+
+
 As tabelas devem ter um ID
 ![Screenshot ](captura.png)
 
