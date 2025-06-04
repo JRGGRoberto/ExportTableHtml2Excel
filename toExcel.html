@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exportar para Excel</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+</head>
+<body>
+    <table id="tabelaa">
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+        </tr>
+        <tr>
+            <td>José</td>
+            <td>joao@example.com</td>
+            <td>123456789</td>
+        </tr>
+        <tr>
+            <td>Maria</td>
+            <td>maria@example.com</td>
+            <td>987654321</td>
+        </tr>
+        <tr>
+            <td>AAAMaria</td>
+            <td>AAmaria@example.com</td>
+            <td>987654321</td>
+        </tr>
+    </table>
+    <button onclick="exportToExcel('tabelaa')">Exportar para Excel</button>
+
+    <table id="tabelae">
+        <tr>
+            <th>aaaNome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+        </tr>
+        <tr>
+            <td>João</td>
+            <td>joao@example.com</td>
+            <td>123456789</td>
+        </tr>
+        <tr>
+            <td>AAAMaria</td>
+            <td>AAmaria@example.com</td>
+            <td>987654321</td>
+        </tr>
+    </table>
+    <button onclick="exportToExcel('tabelae')">Exportar para Excel</button>
+
+    <script>
+        function exportToExcel(tab) {
+            var tabela = document.getElementById(tab);
+            var planilha = XLSX.utils.table_to_book(tabela, {sheet: "Sheet 1"});
+            XLSX.write(planilha, {bookType: 'xlsx', bookSST: true, type: 'binary'});
+            XLSX.writeFile(planilha, 'exportacao.xlsx');
+        }
+    </script>
+</body>
+</html>
